@@ -1,0 +1,59 @@
+<?xml version="1.0"?>
+<sdf version="1.6">
+<world name="default">
+
+  <physics type="bullet">
+  </physics>
+
+  <include>
+    <uri>model://ground_plane</uri>
+  </include>
+
+  <include>
+    <uri>model://sun</uri>
+  </include>
+
+  <model name="box">
+    <pose>-1.5 0.5 0.5 0 0 0</pose>
+    <static>false</static>
+    <link name="link">
+    <inertial>
+      <mass>100.0</mass>
+      <inertia>
+        <ixx>0.083</ixx>
+        <ixy>0.0</ixy>
+        <ixz>0.0</ixz>
+        <iyy>0.083</iyy>
+        <iyz>0.0</iyz>
+        <izz>0.083</izz>
+      </inertia>
+    </inertial>
+
+    <collision name="collision">
+        <geometry>
+          <box>
+            <size>1 1 1</size>
+          </box>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>100</mu>
+              <mu2>100</mu2>
+            </ode>
+          </friction>
+        </surface>  
+      </collision>
+
+      <visual name="visual">
+        <geometry>
+          <box>
+            <size>1 1 1</size>
+          </box>
+        </geometry>
+      </visual>
+
+    </link>
+  </model>
+</world>
+</sdf>
