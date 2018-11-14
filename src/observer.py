@@ -132,10 +132,12 @@ class  pendulum_momentum_obs():
             torque_d = (gamma-1)*alpha_k + beta*(P_k - gamma*self.P_k_prev) + gamma*self.torque_d_prev
 
             disturbance_force = np.matmul(np.matmul(np.linalg.inv(np.matmul(self.S,np.transpose(self.J))),self.S),torque_d)
+            applied_torque_approximation = -np.matmul(np.transpose(self.J),disturbance_force)+self.G
 
             self.torque_d_prev = torque_d
             self.P_k_prev = P_k
-            print(disturbance_force)
+            print(applied_torque_approximation)
+            print(torque_ext)
 
 if __name__ == '__main__':
     O = pendulum_momentum_obs()
