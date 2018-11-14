@@ -1,4 +1,4 @@
-Gazebo simulation for generalized Momentum Observer.
+# Gazebo simulation for generalized Momentum Observer.
 
 To launch the simualtion - roslaunch gmm_obs robot_torque_control.launch
 
